@@ -1,26 +1,31 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-import {NotFoundComponent} from './not-found/not-found.component';
-import {APP_ROUTES} from './app.routes';
-import {PagesModule} from './pages/pages.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { AuthComponent } from './layout/auth/auth.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedModule} from './shared/shared.module';
+import {MenuItems} from './shared/menu-items/menu-items';
+import {BreadcrumbsComponent} from './layout/admin/breadcrumbs/breadcrumbs.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    NotFoundComponent
+    AdminComponent,
+    AuthComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTES,
-    PagesModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [MenuItems],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
