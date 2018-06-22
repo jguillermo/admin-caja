@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AdminComponent} from './layout/admin/admin.component';
+import {ErrorComponent} from './layout/error/error.component';
 
 
 // const appRoutingModule: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
-      }
+      },
+      {path: '**', component: ErrorComponent}
     ]
   },
   // {
@@ -38,6 +40,7 @@ const routes: Routes = [
   //     }
   //   ]
   // }
+
 ];
 
 @NgModule({
