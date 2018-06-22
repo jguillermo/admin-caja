@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Model1Component implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('inioel modulo dasboard');
+  }
 
   ngOnInit() {
   }
